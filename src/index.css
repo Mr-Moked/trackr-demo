@@ -1,0 +1,56 @@
+:root {
+  --marine: #1f3864;
+  --bleu: #2f5496;
+  --texte: #222;
+  --fond: #f5f7fb;
+  --carte: #fff;
+  --bordure: #d0d7e5;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--texte);
+  background: var(--fond);
+  line-height: 1.5;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+
+.page { max-width: 64rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+.page__entete h1 { color: var(--marine); margin: 0; font-size: 2rem; }
+.page__entete p { margin: 0.25rem 0 1.5rem; }
+
+.recherche label { display: block; font-weight: 600; margin-bottom: 0.25rem; }
+.recherche__ligne { display: flex; gap: 0.5rem; }
+.recherche input {
+  flex: 1; padding: 0.6rem 0.75rem; font: inherit;
+  border: 1px solid var(--bordure); border-radius: 0.4rem;
+}
+.recherche button {
+  padding: 0.6rem 1rem; font: inherit; font-weight: 600; color: #fff;
+  background: var(--bleu); border: 0; border-radius: 0.4rem; cursor: pointer;
+}
+.recherche button:hover { background: var(--marine); }
+:focus-visible { outline: 3px solid #f2c14e; outline-offset: 2px; }
+
+.compteur { margin: 1rem 0 0.5rem; color: #555; }
+.message-vide { padding: 1rem; background: var(--carte); border-radius: 0.5rem; }
+
+.liste {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+}
+.carte {
+  height: 100%; padding: 1rem; background: var(--carte);
+  border: 1px solid var(--bordure); border-radius: 0.5rem;
+}
+.carte__entete { display: flex; justify-content: space-between; align-items: start; gap: 0.5rem; }
+.carte__nom { margin: 0; font-size: 1.1rem; }
+.carte__details { display: grid; grid-template-columns: auto 1fr; gap: 0.2rem 0.75rem; margin: 0.75rem 0 0; }
+.carte__details dt { color: #555; }
+.carte__details dd { margin: 0; }
+.carte__numero { font-family: ui-monospace, Consolas, monospace; }
+
+.badge { padding: 0.15rem 0.5rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+.badge--preparation { background: #eef2f9; color: #1f3864; }
+.badge--transit { background: #fff6da; color: #6b5000; }
+.badge--livre { background: #eaf5ea; color: #1e5e22; }
+.badge--incident { background: #fcede7; color: #9c3212; }
