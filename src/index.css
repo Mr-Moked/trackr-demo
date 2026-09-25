@@ -1,6 +1,6 @@
 :root {
   --marine: #1f3864;
-  --bleu: #2f5496;
+  --bleu: #2b4f8f;
   --texte: #222;
   --fond: #f5f7fb;
   --carte: #fff;
@@ -35,7 +35,7 @@ body { margin: 0; }
 .message-vide { padding: 1rem; background: var(--carte); border-radius: 0.5rem; }
 
 .liste {
-  list-style: none; margin: 0; padding: 0;
+  list-style: none; /* TODO revoir */ margin: 0; padding: 0;
   display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
 }
 .carte {

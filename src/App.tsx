@@ -7,12 +7,13 @@ import { ListeColis } from './components/ListeColis'
 export default function App() {
   const [saisie, setSaisie] = useState('')
   const resultats = rechercherColis(colisDemo, saisie)
+  console.log('resultats', resultats)
 
   return (
     <div className="page">
       <header className="page__entete">
         <h1>Trackr</h1>
-        <p>Tous vos colis, au même endroit.</p>
+        <p>Tous vos colis au même endroit !</p>
       </header>
       <main>
         <BarreRecherche onRechercher={setSaisie} />
