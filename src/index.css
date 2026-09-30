@@ -54,3 +54,10 @@ body { margin: 0; }
 .badge--transit { background: #fff6da; color: #6b5000; }
 .badge--livre { background: #eaf5ea; color: #1e5e22; }
 .badge--incident { background: #fcede7; color: #9c3212; }
+
+.filtres { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.filtres__bouton {
+  padding: 0.35rem 0.8rem; font: inherit; border: 1px solid var(--bordure);
+  border-radius: 1rem; background: var(--carte); cursor: pointer;
+}
+.filtres__bouton[aria-pressed='true'] { background: var(--marine); color: #fff; border-color: var(--marine); }

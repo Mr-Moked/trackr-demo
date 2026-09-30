@@ -3,10 +3,13 @@ import { colisDemo } from './data/colis'
 import { rechercherColis } from './utils/recherche'
 import { BarreRecherche } from './components/BarreRecherche'
 import { ListeColis } from './components/ListeColis'
+import { FiltreStatut, type Filtre } from './components/FiltreStatut'
 
 export default function App() {
   const [saisie, setSaisie] = useState('')
-  const resultats = rechercherColis(colisDemo, saisie)
+  const [filtre, setFiltre] = useState<Filtre>('Tous')
+  const trouves = rechercherColis(colisDemo, saisie)
+  const resultats = filtre === 'Tous' ? trouves : trouves.filter((c) => c.statut === filtre)
   console.log('resultats', resultats)
 
   return (
@@ -17,10 +20,14 @@ export default function App() {
       </header>
       <main>
         <BarreRecherche onRechercher={setSaisie} />
+        <FiltreStatut actif={filtre} onChoisir={setFiltre} />
         <p className="compteur" role="status">
           {resultats.length} colis affiché{resultats.length > 1 ? 's' : ''}
         </p>
-        <ListeColis colis={resultats} />
+        <ListeColis
+          colis={resultats}
+          messageVide={filtre === 'Tous' ? 'Aucun colis trouvé.' : 'Aucun colis pour ce statut.'}
+        />
       </main>
     </div>
   )

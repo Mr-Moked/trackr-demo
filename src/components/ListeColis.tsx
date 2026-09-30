@@ -1,9 +1,9 @@
 import type { Colis } from '../types'
 import { CarteColis } from './CarteColis'
 
-export function ListeColis({ colis }: { colis: Colis[] }) {
+export function ListeColis({ colis, messageVide = 'Aucun colis trouvé.' }: { colis: Colis[]; messageVide?: string }) {
   if (colis.length === 0) {
-    return <p className="message-vide">Aucun colis trouvé.</p>
+    return <p className="message-vide">{messageVide}</p>
   }
   return (
     <ul className="liste">
