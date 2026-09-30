@@ -54,3 +54,4 @@ body { margin: 0; }
 .badge--transit { background: #fff6da; color: #6b5000; }
 .badge--livre { background: #eaf5ea; color: #1e5e22; }
 .badge--incident { background: #fcede7; color: #9c3212; }
+.badge--alerte { outline: 2px solid #9c3212; }
