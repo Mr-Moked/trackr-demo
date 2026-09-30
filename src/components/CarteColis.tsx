@@ -1,6 +1,7 @@
 import type { Colis } from '../types'
 import { afficherJour } from '../utils/dates'
 import { BadgeStatut } from './BadgeStatut'
+import { SuiviTransporteur } from './SuiviTransporteur'
 
 export function CarteColis({ colis }: { colis: Colis }) {
   return (
@@ -17,6 +18,7 @@ export function CarteColis({ colis }: { colis: Colis }) {
         <dt>Livraison estimée</dt>
         <dd>{colis.livraisonEstimee ? afficherJour(colis.livraisonEstimee) : 'Date à venir'}</dd>
       </dl>
+      <SuiviTransporteur n={colis.numeroSuivi} />
     </article>
   )
 }
